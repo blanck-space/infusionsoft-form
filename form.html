@@ -82,10 +82,17 @@
     width: 100%;
 }
 .inf-form-mod input.hf-validated.hf-valid.hf-user-valid:not(#inf_field_Phone1){
-    border-bottom-color: green;
+  border-bottom: 2px solid green;
 }
 .inf-form-mod input.hf-validated.hf-valid.hf-user-valid.error, .inf-form-mod input.hf-validated.hf-invalid.hf-user-invalid {
-    border-bottom-color: red;
+  border-bottom: 3px solid red!important;
+}
+input.infusion-field-input-container.hf-validated.hf-valid.hf-in-range.hf-user-valid.error {
+    border-bottom: 3px solid red!important;
+}
+.hf-invalid+.hf-warning, :invalid+.hf-warning {
+    display: block!important;
+    z-index: 100;
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.9.5/hyperform.min.css">
@@ -127,7 +134,7 @@
       </div>
         <div class="infusion-field">
             <label for="inf_field_Email">Email *</label>
-            <input class="infusion-field-input-container" id="inf_field_Email" name="inf_field_Email" type="email" placeholder="Email" onkeyup="checkform()" required/>
+            <input class="infusion-field-input-container" id="inf_field_Email" name="inf_field_Email" type="email" placeholder="Email" onkeyup="checkform()" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" data-pattern-mismatch="Please enter correct email address."/>
         </div>
         <div class="infusion-field">
             <label for="inf_field_Phone1">Cell Phone *</label>
@@ -174,6 +181,7 @@ telInput.intlTelInput({
     });
   },
   preferredCountries: ['ie', 'it'],
+  separateDialCode: true,
   utilsScript: "/utils.js",
 });
 
