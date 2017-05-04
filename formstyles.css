@@ -30,11 +30,13 @@
 
 .inf-form-mod #is-submitbutton {
   color: #FFF;
-  background-color: #428BCA;
-  border: 1px solid #357EBD; }
+  margin-top: 5px;
+  text-transform: uppercase;
+  background-color: #f6620a;
+  border: 1px solid #f2772d; }
   .inf-form-mod #is-submitbutton:hover {
-    background-color: #3276B1;
-    border-color: #285E8E;
+    background-color: #f2772d;
+    border-color: #f6620a;
     cursor: pointer;
   }
 
